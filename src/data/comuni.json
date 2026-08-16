@@ -1,0 +1,15 @@
+[
+  {
+    "codice": "A944",
+    "nome": "Bologna",
+    "provincia": "BO",
+    "regione": "06",
+    "annoDato": 2025,
+    "esenzione": 15000,
+    "scaglioni": [{ "fino": null, "aliquota": 0.8 }],
+    "delibera": "n. 354/2016, confermata (pubblicazione MEF 20/12/2025)",
+    "notaAnno": "Al 16/08/2026 il Comune di Bologna non ha pubblicato una delibera per il 2026: si applica l'ultima aliquota disponibile, quella del 2025.",
+    "verificatoIl": "2026-08-16",
+    "fonte": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/nuova_addcomirpef/risultato.htm?anno=2025&cm=&pr=BO&cc=A944&r=1"
+  }
+]

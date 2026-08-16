@@ -1,0 +1,17 @@
+[
+  {
+    "codice": "06",
+    "nome": "Emilia-Romagna",
+    "annoDato": 2026,
+    "scaglioni": [
+      { "fino": 15000, "aliquota": 1.33 },
+      { "fino": 28000, "aliquota": 1.93 },
+      { "fino": 50000, "aliquota": 2.78 },
+      { "fino": null, "aliquota": 3.33 }
+    ],
+    "norme": "Art. 6 D.lgs. 68/2011; art. 2 L.R. Emilia-Romagna 20/12/2006 n. 19, come modificato dall'art. 2 c. 1 L.R. 31/03/2025 n. 1 e coordinato con la L.R. 25/07/2025 n. 9",
+    "dataPubblicazione": "2026-01-19",
+    "verificatoIl": "2026-08-16",
+    "fonte": "https://www1.finanze.gov.it/finanze2/dipartimentopolitichefiscali/fiscalitalocale/addregirpef/addregirpef.php?reg=06&anno=2026"
+  }
+]
