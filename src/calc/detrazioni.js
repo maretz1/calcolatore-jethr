@@ -9,25 +9,39 @@ import {
  * Detrazione per redditi da lavoro dipendente (art. 13 TUIR).
  * Decresce al crescere del reddito e si azzera oltre i 50.000 €.
  *
+ * Comprende la maggiorazione di 65 € dell'art. 13 comma 1.1 TUIR per i redditi
+ * tra 25.000 e 35.000 €: piccola, ma è il tipo di dettaglio che fa divergere il
+ * risultato da quello dei calcolatori pubblici proprio nella fascia più comune.
+ *
  * Semplificazione: non è gestito il floor di 690 € previsto per i redditi molto
  * bassi a tempo indeterminato; nel range coperto dal prototipo non si attiva mai,
  * perché la formula resta ampiamente sopra quel valore fino a 50.000 €.
  */
 export function detrazioneLavoroDipendente(imponibile) {
-  const { fasciaBassa, fasciaMedia, fasciaAlta } = DETRAZIONE_LAVORO_DIPENDENTE
+  const { fasciaBassa, fasciaMedia, fasciaAlta, maggiorazione } =
+    DETRAZIONE_LAVORO_DIPENDENTE
 
   if (imponibile <= 0) return 0
+
+  const bonus =
+    imponibile > maggiorazione.da && imponibile <= maggiorazione.a
+      ? maggiorazione.importo
+      : 0
+
   if (imponibile <= fasciaBassa.limite) return fasciaBassa.importo
 
   if (imponibile <= fasciaMedia.limite) {
     return (
       fasciaMedia.base +
-      (fasciaMedia.quota * (fasciaMedia.limite - imponibile)) / fasciaMedia.divisore
+      (fasciaMedia.quota * (fasciaMedia.limite - imponibile)) / fasciaMedia.divisore +
+      bonus
     )
   }
 
   if (imponibile <= fasciaAlta.limite) {
-    return (fasciaAlta.base * (fasciaAlta.limite - imponibile)) / fasciaAlta.divisore
+    return (
+      (fasciaAlta.base * (fasciaAlta.limite - imponibile)) / fasciaAlta.divisore + bonus
+    )
   }
 
   return 0

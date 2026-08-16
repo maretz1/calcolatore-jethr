@@ -42,6 +42,19 @@ export const DETRAZIONE_LAVORO_DIPENDENTE = {
   fasciaBassa: { limite: 15000, importo: 1955 },
   fasciaMedia: { limite: 28000, base: 1910, quota: 1190, divisore: 13000 },
   fasciaAlta: { limite: 50000, base: 1910, divisore: 22000 },
+  /**
+   * Art. 13 comma 1.1 TUIR: "La detrazione spettante ai sensi del comma 1 è aumentata
+   * di un importo pari a 65 euro, se il reddito complessivo è superiore a 25.000 euro
+   * ma non a 35.000 euro". Introdotta dalla L. 234/2021 e mai abrogata.
+   *
+   * Da non confondere con l'esonero contributivo IVS 6%/7% del 2024, che aveva soglie
+   * simili (25k/35k) ma è stato abolito dal 2025, né con l'ulteriore detrazione "cuneo
+   * fiscale" di 1.000 € (soglie 20k/32k/40k): sono tre misure distinte e questa si somma
+   * alla seconda.
+   *
+   * Non ragguagliata al periodo di lavoro (circ. Agenzia delle Entrate n. 4/2022, §1.2.1).
+   */
+  maggiorazione: { da: 25000, a: 35000, importo: 65 },
 }
 
 /**
