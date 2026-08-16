@@ -1,16 +1,29 @@
-# React + Vite
+# Calcolatore RAL → Netto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prototipo web che, data una **RAL** (Retribuzione Annua Lorda), calcola il **netto annuo**, il **netto mensile**
+e il **dettaglio di tutte le trattenute**: contributi INPS, IRPEF lorda e netta con le detrazioni applicate,
+addizionale regionale e addizionale comunale.
 
-Currently, two official plugins are available:
+Dati fiscali **2026**. Applicazione **interamente client-side**: nessun backend, nessuna chiamata di rete a runtime.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Come si lancia
 
-## React Compiler
+```bash
+npm install
+npm run dev      # server di sviluppo
+npm run build    # build statica in dist/
+npm run preview  # anteprima della build
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stato
 
-## Expanding the ESLint configuration
+Lavoro in corso, un passo alla volta:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [x] Step 1 — impalcatura del progetto
+- [ ] Step 2 — dataset addizionali regionali e comunali (fonte MEF)
+- [ ] Step 3 — motore di calcolo
+- [ ] Step 4 — test
+- [ ] Step 5 — interfaccia
+- [ ] Step 6 — documentazione di consegna e deploy
+
+Assunzioni, semplificazioni e fonti dei dati verranno documentate qui alla fine dello Step 6.
