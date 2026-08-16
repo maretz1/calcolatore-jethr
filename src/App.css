@@ -1,6 +1,6 @@
 .app {
   width: 100%;
-  max-width: 960px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 32px 20px 64px;
 }
@@ -31,4 +31,244 @@
 
 .card > h2 {
   margin-bottom: 16px;
+}
+
+.nota {
+  color: var(--testo-tenue);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.errore {
+  color: #b42318;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* ---------- form ---------- */
+
+.campi {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+}
+
+@media (max-width: 600px) {
+  .campi {
+    grid-template-columns: 1fr;
+  }
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo > label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--bordo);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible,
+.bottone-principale:focus-visible {
+  outline: 2px solid var(--accento);
+  outline-offset: 1px;
+}
+
+.campo input[aria-invalid='true'] {
+  border-color: #b42318;
+}
+
+.campo .nota {
+  margin-top: 0;
+}
+
+.input-euro {
+  position: relative;
+}
+
+.input-euro input {
+  padding-right: 32px;
+}
+
+.input-euro span {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--testo-tenue);
+}
+
+.campo-checkbox {
+  /* Riga propria a tutta larghezza: allinearla a una colonna la farebbe finire
+     accanto alla nota del campo precedente invece che alla riga dei campi. */
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.campo-checkbox input {
+  width: auto;
+  accent-color: var(--accento);
+}
+
+.campo-checkbox label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.bottone-principale {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accento);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bottone-principale:hover {
+  filter: brightness(1.08);
+}
+
+/* ---------- risultati ---------- */
+
+.risultati-evidenza {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .risultati-evidenza {
+    grid-template-columns: 1fr;
+  }
+}
+
+.risultato {
+  background: var(--accento-tenue);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.risultato-etichetta {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--testo-tenue);
+}
+
+.risultato-valore {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.risultati-sintesi {
+  margin-top: 16px;
+}
+
+/* ---------- dettaglio ---------- */
+
+.tabella-scroll {
+  overflow-x: auto;
+}
+
+.tabella-dettaglio {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabella-dettaglio th,
+.tabella-dettaglio td {
+  padding: 8px 0;
+  text-align: left;
+  font-weight: 400;
+}
+
+.tabella-dettaglio td {
+  text-align: right;
+  white-space: nowrap;
+  padding-left: 16px;
+}
+
+.tabella-dettaglio .segno {
+  display: inline-block;
+  width: 1em;
+  color: var(--testo-tenue);
+}
+
+.riga-dettaglio th,
+.riga-dettaglio td {
+  padding: 2px 0 2px 1.2em;
+  font-size: 0.85rem;
+  color: var(--testo-tenue);
+}
+
+.riga-dettaglio td {
+  padding-left: 16px;
+}
+
+.riga-base th,
+.riga-subtotale th,
+.riga-totale th,
+.riga-netto th,
+.riga-base td,
+.riga-subtotale td,
+.riga-totale td,
+.riga-netto td {
+  font-weight: 600;
+}
+
+.riga-subtotale td,
+.riga-subtotale th,
+.riga-totale td,
+.riga-totale th {
+  border-top: 1px solid var(--bordo);
+}
+
+.riga-netto th,
+.riga-netto td {
+  border-top: 2px solid var(--testo);
+  font-size: 1.05rem;
+  color: var(--positivo);
+}
+
+/* ---------- residenza ---------- */
+
+.residenza-luogo {
+  font-weight: 600;
+}
+
+.residenza-dettagli {
+  margin: 12px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.residenza-dettagli dt {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.residenza-dettagli dd {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: var(--testo-tenue);
 }
