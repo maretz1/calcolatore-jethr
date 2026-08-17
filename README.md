@@ -112,26 +112,6 @@ Le semplificazioni sono scelte esplicite, non omissioni:
 9. Disposizioni particolari regionali (detrazioni o esenzioni per categorie) non modellate: per
    l'Emilia-Romagna la scheda MEF non ne riporta comunque nessuna.
 
-## Tre errori trovati e corretti in fase di implementazione
-
-Il lavoro di verifica non ha solo confermato i dati di progetto: ne ha corretti tre.
-
-**1. Mancava la maggiorazione di 65 €** (art. 13 c. 1.1 TUIR, redditi tra 25.000 e 35.000 €, in vigore
-dalla L. 234/2021). Era stata scartata per un'attribuzione sbagliata: intorno a quella fascia di
-reddito insistono tre misure diverse — l'esonero contributivo IVS 6%/7% (abolito dal 2025), la
-detrazione "cuneo fiscale" da 1.000 € (soglie 20k/32k/40k) e questa maggiorazione, che è
-indipendente da entrambe ed è rimasta. Scartando la prima si era persa anche la terza.
-
-**2. Formula della detrazione coniuge sbagliata** sotto i 15.000 €. La versione di partenza,
-`800 + 110 × (15.000 − reddito)/15.000`, cresce da 800 a 910 € e crea un salto contro la fascia
-successiva, fissa a 690 €. La formula corretta dell'art. 12 TUIR è `800 − 110 × reddito/15.000`:
-decresce da 800 a 690 € e a 15.000 € si raccorda esattamente con la fascia successiva. Un test fissa
-proprio questa continuità.
-
-**3. Detrazione regionale inesistente.** Il progetto iniziale prevedeva la Lombardia con una
-detrazione fissa di 150 € sulla fascia 28k–50k: la scheda MEF della Lombardia non ne riporta traccia.
-Il perimetro è poi cambiato, ma la lezione vale: per le addizionali si usa solo la fonte ufficiale.
-
 ## Validazione
 
 **80 test** (`npm test`) sui moduli di `src/calc/` e su `format.js`: confini esatti di ogni scaglione e
