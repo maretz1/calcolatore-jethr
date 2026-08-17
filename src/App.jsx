@@ -50,12 +50,6 @@ function App() {
       )}
 
       <Residenza regione={regione} comune={comune} />
-
-      <footer className="app-footer">
-        Prototipo semplificato: dipendente privato a tempo indeterminato, full time, 365
-        giorni l&apos;anno, senza agevolazioni e senza trattamento integrativo. Assunzioni,
-        semplificazioni e fonti sono elencate nel README del progetto.
-      </footer>
     </div>
   )
 }

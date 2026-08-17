@@ -105,8 +105,8 @@ function FormCalcolo({ onCalcola }) {
             </p>
           ) : (
             <p className="nota" id="nota-figli">
-              Sotto i 21 anni non spetta detrazione IRPEF: c&apos;è l&apos;Assegno Unico,
-              che non passa dalla busta paga.
+              È a carico se ha un reddito proprio non superiore a 4.000 € (fino a 24 anni)
+              o 2.840,51 € (dai 25).
             </p>
           )}
         </div>
